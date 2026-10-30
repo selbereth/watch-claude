@@ -1,0 +1,27 @@
+name: WatchClaude
+options:
+  bundleIdPrefix: com.selbereth
+  deploymentTarget:
+    watchOS: "10.0"
+settings:
+  base:
+    SWIFT_VERSION: "5.0"
+    DEVELOPMENT_TEAM: ""   # set your team id, or pick the team in Xcode > Signing
+targets:
+  WatchClaude:
+    type: application
+    platform: watchOS
+    sources: [WatchClaude]
+    info:
+      path: WatchClaude/Info.plist
+      properties:
+        CFBundleDisplayName: Claude
+        WKApplication: true
+        # no companion iPhone app: the watch app runs on its own
+        WKRunsIndependentlyOfCompanionApp: true
+        NSAppTransportSecurity:
+          NSAllowsLocalNetworking: true
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.selbereth.watchclaude
+        ASSETCATALOG_COMPILER_APPICON_NAME: AppIcon
